@@ -11,6 +11,9 @@ struct ShaderProgramSource
     std::string FragmentSource;
 
 };
+/*Till I have seen I either the error is int  the Parseshader function or in returning the read value as the read lines ar not printed in the consoles*/
+/*Mainly ParseShader reads the file and the struct is used to return the read files line by line in the form of string*/
+//:::::::IT READS HERE:::::::
 static ShaderProgramSource ParseShader(const std::string& filepath)
 {
     std::fstream stream(filepath);
@@ -126,7 +129,8 @@ int main(void)
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,0);
 
-    ShaderProgramSource source = ParseShader("res/shadersd");
+    ShaderProgramSource source = ParseShader("res/shaders/Basic.shader");
+    //:::::::AND PRINTS HERE:::::::
     std::cout << "VERTEX" << std::endl;
     std::cout <<source.VertexSource << std::endl;
     std::cout << "FRAGMENT" << std::endl;
