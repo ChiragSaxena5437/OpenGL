@@ -78,7 +78,7 @@ static unsigned int CompileShader(unsigned int type, const std::string& source)
     {
         int length;
         glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
-        char* message = (char*)_malloca(length * sizeof(char));
+        char* message = (char*)alloca(length * sizeof(char));
         glGetShaderInfoLog(id, length, &length, message);
         std::cout << "Failed to complie" << (type == GL_VERTEX_SHADER ? "vertex" : "fragment") << "shader " << std::endl;
         std::cout << message << std::endl;
@@ -146,6 +146,7 @@ int main(void)
         2,3,0 
     };
     unsigned int buffer;
+
     GLCall(glGenBuffers(1/*1=no of buffers req*/, &buffer));
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, buffer));
     GLCall(glBufferData(GL_ARRAY_BUFFER, 4* 2 * sizeof(float), positions, GL_STATIC_DRAW));
@@ -172,6 +173,26 @@ int main(void)
 
     float  r = 0.0f;
     float increment = 0.05f;
+    glGenBuffers(1/*1=no of buffers req*/, &buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, buffer);
+    glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW);
+
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,0);
+
+    ShaderProgramSource source = ParseShader("res/shaders/Basic.shader");
+    //:::::::AND PRINTS HERE:::::::
+    std::cout << "VERTEX" << std::endl;
+    std::cout <<source.VertexSource << std::endl;
+    std::cout << "FRAGMENT" << std::endl;
+    std::cout << source.FragmentSource << std::endl;
+
+
+    unsigned int shader = CreateShader(vertexShader,fragmentShader);
+    glUseProgram(shader);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
