@@ -24,7 +24,7 @@ public:
 
 	//Set uniforms
 	void Setuniform4f(const std::string& name,float v0,float v1,float v2,float v3);
-	//void Setuniform1f(const std::string& name, float value);
+	void Setuniform1f(const std::string& name, float value);
 	void SetUniform1f(const std::string& name, float value);
 private:
 	//bool CompileShader();
