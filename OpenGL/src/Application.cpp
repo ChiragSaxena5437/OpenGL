@@ -53,9 +53,7 @@ int main(void)
             0,1,2,
             2,3,0
         };
-        unsigned int vao;
-        GLCall(glGenVertexArrays(1, &vao));
-        GLCall(glBindVertexArray(vao));
+
 
         VertexArray va;
         VertexBuffer vb(positions, 4 * 2 * sizeof(float));
