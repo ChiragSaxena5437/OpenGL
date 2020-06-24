@@ -1,37 +1,37 @@
+#
 #pragma once
+
 #include <string>
 #include <unordered_map>
 
 struct ShaderProgramSource
 {
-	std::string VertexSource;
-	std::string FragmentSource;
-
+    std::string VertexSource;
+    std::string FragmentSource;
 };
+
 class Shader
 {
-private:
-	 const std::string& m_FilePath;
-	unsigned int m_RendererID;
-	//caching system
-	std::unordered_map<std::string, int> m_UniformLocationCache;
-public:
-	Shader(const std::string& filepath);
-	~Shader();
+    private:
+        unsigned int m_RendererID;
+        std::string m_FilePath;
+        std::unordered_map<std::string, int> m_UniformLocationCache;
 
-	void Bind() const;
-	void Unbind() const;
+    public:
+        Shader(const std::string& filepath);
+        ~Shader();
 
-	//Set uniforms
-	void Setuniform4f(const std::string& name,float v0,float v1,float v2,float v3);
-	void Setuniform1f(const std::string& name, float value);
-	void SetUniform1f(const std::string& name, float value);
-private:
-	//bool CompileShader();
-	unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
-	unsigned int CompileShader(unsigned int type, const std::string& source);
-	ShaderProgramSource ParseShader(const std::string& filepath);
-	unsigned int GetUniformLocation(const std::string& name);
-	unsigned int GetUniformLocation(const std::string& name, float value);
+        void Bind() const;
+        void Unbind() const;
+
+        // Set uniforms
+        void SetUniform4f(const std::string& name, float f0, float f1, float f2, float f3);
+        void SetUniform1f(const std::string& name, float value);
+
+    private:
+        int GetUniformLocation(const std::string& name);
+        struct ShaderProgramSource ParseShader(const std::string& filepath);
+        unsigned int CompileShader(unsigned int type, const std::string& source);
+        unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
 
 };
