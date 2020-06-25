@@ -8,7 +8,9 @@
 #include "Shader.h"
 #include "VertexBufferLayout.h"
 #include "Texture.h"
-//Ep 19 06:19
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.inl"
+#include <glm\ext\matrix_clip_space.hpp>
 int main(void)
 {
     GLFWwindow* window;
@@ -59,10 +61,14 @@ int main(void)
             layout.Push<float>(2);
             layout.Push<float>(2);
             va.AddBuffer(vb, layout);
-            
+
+            glm::mat4 proj = glm::ortho(-2.0f, 2.0f, -1.5f, 1.5f, -1.0f, 1.0f);
+
+
             Shader shader("res/shaders/Basic.shader");
             shader.Bind();
             shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
+            shader.SetUniform4f("u_MVP", proj);
             
             Renderer renderer;
             float r = 0.0f;
