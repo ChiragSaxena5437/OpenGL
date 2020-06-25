@@ -8,6 +8,7 @@
 #include "Shader.h"
 #include "VertexBufferLayout.h"
 #include "Texture.h"
+//Ep 19 06:19
 int main(void)
 {
     GLFWwindow* window;
@@ -47,7 +48,7 @@ int main(void)
             2, 3, 0
         };
         {
-            GLCall (glEnable(GL_BLEND));
+            GLCall(glEnable(GL_BLEND));
             GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 
             VertexArray va;
