@@ -49,7 +49,7 @@
     <ClCompile Include="src\vendor\imgui\imgui_draw.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\vendor\imgui\imgui_impl_sdl_gl3.cpp">
+    <ClCompile Include="src\vendor\imgui\imgui_impl_glfw_gl3.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -350,7 +350,7 @@
     <ClInclude Include="src\vendor\imgui\stb_rect_pack.h" />
     <ClInclude Include="src\vendor\imgui\stb_textedit.h" />
     <ClInclude Include="src\vendor\imgui\stb_truetype.h" />
-    <ClInclude Include="src\vendor\imgui\imgui_impl_sdl_gl3.h" />
+    <ClInclude Include="src\vendor\imgui\imgui_impl_glfw_gl3.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader">
@@ -492,5 +492,9 @@
     <None Include="src\vendor\glm\gtx\vector_angle.inl" />
     <None Include="src\vendor\glm\gtx\vector_query.inl" />
     <None Include="src\vendor\glm\gtx\wrap.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\textures\chirag.png" />
+    <Image Include="res\textures\Test.png" />
   </ItemGroup>
 </Project>
