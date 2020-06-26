@@ -52,6 +52,9 @@
     <ClCompile Include="src\vendor\imgui\imgui_impl_glfw_gl3.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\tests\TestClearColor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\IndexBuffer.h" />
@@ -351,6 +354,8 @@
     <ClInclude Include="src\vendor\imgui\stb_textedit.h" />
     <ClInclude Include="src\vendor\imgui\stb_truetype.h" />
     <ClInclude Include="src\vendor\imgui\imgui_impl_glfw_gl3.h" />
+    <ClInclude Include="src\tests\Test.h" />
+    <ClInclude Include="src\tests\TestClearColor.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader">
