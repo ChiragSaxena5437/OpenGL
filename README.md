@@ -9,4 +9,5 @@ could only be completed with ep 26.
 Sync the name of your image file and the one in code.
 Though i have take full care that I keep all the variable names and other names used in the codes but please check
 for these issues and reprt me if any.
+There is one another branch namely "error" it does not have much of a significance but was usd to debug
 :} 
