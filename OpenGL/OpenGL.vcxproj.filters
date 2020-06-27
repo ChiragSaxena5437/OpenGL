@@ -55,6 +55,12 @@
     <ClCompile Include="src\tests\TestClearColor.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\tests\TestTexture2D.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tests\Test.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\IndexBuffer.h" />
@@ -356,6 +362,7 @@
     <ClInclude Include="src\vendor\imgui\imgui_impl_glfw_gl3.h" />
     <ClInclude Include="src\tests\Test.h" />
     <ClInclude Include="src\tests\TestClearColor.h" />
+    <ClInclude Include="src\tests\TestTexture2D.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader">
