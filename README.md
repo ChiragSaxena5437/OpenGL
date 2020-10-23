@@ -1,4 +1,4 @@
-# OpenGL
+<strong># OpenGL</strong>
 My part of code in sync with the cherno opengl series  
 The main method is in the application .cpp.
 
@@ -14,10 +14,10 @@ Sync the name of your image file and the one in code.
 
 
 Though I have take full care that I keep all the variable names and other names used in the codes but please check
-for these issues and reprt me if any.
+for these issues and report me if any.
 
 
-There is one another branch namely "error" it does not have much of a significance but was usd to debug
+There is one another branch namely "error" it does not have much of a significance but was used to debug
 
 
 <h1>:)</h1> 
