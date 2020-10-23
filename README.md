@@ -1,8 +1,14 @@
 <strong># OpenGL</strong>
+
+
 My part of code in sync with the cherno opengl series  
+
+
 The main method is in the application .cpp.
 
 <a>The basic.shader contains all the shaders used till now which will beused and read in various ways.</a>
+
+
 <a>Please Support the Cherno at https://www.patreon.com/thecherno</a>
 
 
